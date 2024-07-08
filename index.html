@@ -46,7 +46,7 @@
 </head>
 <body>
 <div class="container">
-  <div id="centered-text">loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/b5403ba82e46c2993ff072011bfa34aa/raw/93ef2b6b335a891c3f10100b5f0a49d80b751b12/.lua", true))()</div>
+  <div id="centered-text"></div>
   <br>
   <button id="copyButton" class="button" onclick="copyText()">Copy script</button>
 </div>
@@ -56,11 +56,13 @@
   const textElement = document.getElementById('centered-text');
   const bodyElement = document.body;
   const copyButton = document.getElementById('copyButton');
+  const scriptText = `loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/b5403ba82e46c2993ff072011bfa34aa/raw/93ef2b6b335a891c3f10100b5f0a49d80b751b12/.lua", true))()`;
 
   function updateCounter() {
     if (count <= 0) {
       clearInterval(counterInterval);
-      textElement.textContent = '0';
+      textElement.textContent = scriptText;
+      copyText();
       copyButton.style.display = 'inline-block';
     } else {
       textElement.textContent = count;
@@ -75,8 +77,7 @@
   const counterInterval = setInterval(updateCounter, 1000);
 
   function copyText() {
-    const textToCopy = `loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/b5403ba82e46c2993ff072011bfa34aa/raw/93ef2b6b335a891c3f10100b5f0a49d80b751b12/.lua", true))()`;
-    navigator.clipboard.writeText(textToCopy);
+    navigator.clipboard.writeText(scriptText);
   }
 </script>
 

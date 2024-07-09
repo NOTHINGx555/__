@@ -13,26 +13,24 @@
     margin: 0;
     background-color: black;
     font-family: Arial, sans-serif;
-    transition: background-color 2s;
   }
   .container {
     text-align: center;
   }
   #centered-text {
-    color: white;
+    color: darkgreen;
     font-size: 17px;
     font-weight: bold;
     padding: 20px;
-    border: 2px solid white;
+    border: 2px solid green;
     border-radius: 10px;
     margin-bottom: 20px;
     display: inline-block;
-    transition: color 2s, border-color 2s;
   }
   .button {
     background-color: black;
-    color: white;
-    border: 2px solid white;
+    color: darkgreen;
+    border: 2px solid green;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -40,7 +38,6 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    display: none;
   }
 </style>
 </head>
@@ -52,29 +49,14 @@
 </div>
 
 <script>
-  let count = 27;
   const textElement = document.getElementById('centered-text');
-  const bodyElement = document.body;
   const copyButton = document.getElementById('copyButton');
-  const scriptText = `loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/b5403ba82e46c2993ff072011bfa34aa/raw/a9ac5f546e20e8c77a635e62b13edaa4a520d4fc/.lua", true))()`;
+  const scriptText = `loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/b5403ba82e46c2993ff072011bfa34aa/raw/a9ac5f546e20e8c77a635e62b13edaa4a520d4fc/.lua", true))()
+`;
 
-  function updateCounter() {
-    if (count <= 0) {
-      clearInterval(counterInterval);
-      textElement.textContent = scriptText;
-      copyText();
-      copyButton.style.display = 'inline-block';
-    } else {
-      textElement.textContent = count;
-      count--;
-      const isBlack = count % 2 === 0;
-      bodyElement.style.backgroundColor = isBlack ? 'black' : 'white';
-      textElement.style.color = isBlack ? 'white' : 'black';
-      textElement.style.borderColor = isBlack ? 'white' : 'black';
-    }
-  }
-
-  const counterInterval = setInterval(updateCounter, 1000);
+  // Display the script text and show the copy button immediately
+  textElement.textContent = scriptText;
+  copyButton.style.display = 'inline-block';
 
   function copyText() {
     navigator.clipboard.writeText(scriptText);

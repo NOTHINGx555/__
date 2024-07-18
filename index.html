@@ -18,19 +18,19 @@
     text-align: center;
   }
   #centered-text {
-    color: darkblue;
+    color: blue;
     font-size: 17px;
     font-weight: bold;
     padding: 20px;
-    border: 2px solid darkblue;
+    border: 2px solid blue;
     border-radius: 10px;
     margin-bottom: 20px;
     display: inline-block;
   }
   .button {
     background-color: black;
-    color: darkblue;
-    border: 2px solid darkblue;
+    color: blue;
+    border: 2px solid blue;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -45,13 +45,13 @@
 <div class="container">
   <div id="centered-text"></div>
   <br>
-  <button id="copyButton" class="button" onclick="copyText()">Copy script(look console)</button>
+  <button id="copyButton" class="button" onclick="copyText()">Copy script  (look console)</button>
 </div>
 
 <script>
   const textElement = document.getElementById('centered-text');
   const copyButton = document.getElementById('copyButton');
-  const scriptText = `loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/91dbd7e4e79f53bac337a6083c7fa977/raw/71ed841d7fb2c973893b8146d7688c89ea898c6e/.lua", true))()
+  const scriptText = `loadstring(game:HttpGet("https://gist.githubusercontent.com/NOTHINGx555/b5f25ce6049d0b4f3d4c73966f6aac2f/raw/497580dc246bd72db31520273f707b6e914be777/.lua", true))()
 `;
 
   // Display the script text and show the copy button immediately
